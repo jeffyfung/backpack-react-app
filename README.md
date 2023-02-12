@@ -5,9 +5,9 @@
 > so please refer to [it's documentation](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md)
 > for more usage information.
 
-# [_Put your project name here_]
+# Backpack React App
 
-[_Add a brief description of your project here._]
+React App using the open source library Backpack.
 
 ## npm script commands
 
@@ -50,7 +50,7 @@ my-app/
 Inside `ssr.js`, export the components that you wish to expose for server-side rendering - the file contents should look something like this:
 
 ```js
-import App from './App';
+import App from "./App";
 
 export default { App };
 ```
@@ -72,19 +72,19 @@ This file can now be required and pre-rendered on the server like so (rough impl
 `server.js`:
 
 ```js
-const React = require('react');
-const express = require('express');
-const ReactDOMServer = require('react-dom/server');
+const React = require("react");
+const express = require("express");
+const ReactDOMServer = require("react-dom/server");
 
-const components = require('./my-app/build/ssr').default;
+const components = require("./my-app/build/ssr").default;
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get("/", (req, res) => {
   const element = React.createElement(components.App);
   const html = ReactDOMServer.renderToString(element);
 
-  res.render('index', { html });
+  res.render("index", { html });
 });
 
 module.exports = router;

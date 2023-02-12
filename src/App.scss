@@ -1,4 +1,4 @@
-@import '~bpk-mixins';
+@import "~bpk-mixins";
 
 @mixin container {
   max-width: $bpk-breakpoint-desktop;
@@ -27,11 +27,16 @@
 
   &__main {
     padding: $bpk-spacing-xxl;
+    text-align: center;
 
     @include container;
 
     @include bpk-breakpoint-mobile {
       padding: $bpk-spacing-base;
+    }
+
+    div[class^="BpkCalendar_bpk-calendar"] {
+      margin: 0 auto 1rem;
     }
   }
 
